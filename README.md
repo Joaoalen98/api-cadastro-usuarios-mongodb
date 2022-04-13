@@ -4,7 +4,9 @@ Está API possui a funcionalidade de cadastrar usuário em um banco de dados Mon
 
 ## Como Executar
 
-Clone este repositório e execute o comando **cd cadastro-usuarios-express**. Em seguida execute com o node ou nodemon o server.js. A API irá rodar em http://localhost:8080
+Clone este repositório e execute o comando **cd cadastro-usuarios-express**. Em seguida execute com o node ou nodemon o server.js. A API irá rodar em http://localhost:8080;
+
+Vá em **src/config/connectDB.js** substitua o valor da constante "url" pela url do seu banco de dados MongoDB ou pela sua variável de ambiente.
 
 ## Rotas
 
