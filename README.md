@@ -20,12 +20,12 @@ A API possui as seguintes rotas:
 
 ### POST:
 
-**/usuarios** : cadastra um usuário no banco de dados com as informações enviadas pelo body da requisição, sendo que no body é obrigatorio os dados:
+**/usuarios** : cadastra um usuário no banco de dados com as informações enviadas pelo body da requisição, sendo que no body é obrigatorio os dados: <br>
 {
-    nomeCompleto: tipo String,
-    dataNascimento: tipo Date,
-    email: tipo String,
-    senha: tipo String
+    nomeCompleto: tipo String, <br>
+    dataNascimento: tipo Date, <br>
+    email: tipo String, <br>
+    senha: tipo String <br>
 } 
 
 ### PUT:
