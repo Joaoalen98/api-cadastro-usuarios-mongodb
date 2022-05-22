@@ -35,9 +35,3 @@ A API possui as seguintes rotas:
 ### DELETE
 
 **/usuarios/id** : deleta um usuário para o id informado.
-
-## OBS
-
-As senhas não possuem Hash ou criptografia.
-
-
