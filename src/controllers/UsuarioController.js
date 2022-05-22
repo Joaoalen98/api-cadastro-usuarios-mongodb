@@ -1,4 +1,5 @@
 import usuarios from "../models/usuarioSchema.js"
+import bcrypt from "bcrypt";
 
 class UsuariosControllers {
 
@@ -24,7 +25,14 @@ class UsuariosControllers {
     }
 
     static cadastrarUsuario = (req, res) => {
-        const usuario = new usuarios(req.body)
+
+        const salt = bcrypt.genSalt(10)
+        const hash = bcrypt.hash(req.body.senha, salt)
+        req.body.senha = hash
+
+        const dados = req.body
+
+        const usuario = new usuarios(dados)
 
         usuario.save((err, result) => {
             if(err) {
@@ -38,6 +46,13 @@ class UsuariosControllers {
 
     static atualizarUsuario = (req, res) => {
         const id = req.params.id
+
+        if (req.body.senha) {
+            const salt = bcrypt.genSalt(10)
+            const hash = bcrypt.hash(req.body.senha, salt)
+            req.body.senha = hash
+        }
+
         usuarios.findByIdAndUpdate(id, {$set: req.body}, (err, result) => {
             if(err) {
                 res.status(500).send({message: `${err.message} - Não foi possível atulizar o usuário`})
